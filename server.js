@@ -4,9 +4,25 @@ let req = require("express");
 let express = req();
 const MongoClient = require('mongodb').MongoClient;
 let config = require('./config/development');
-let winston = require('./config/winston');
+const elasticSearch = require('elasticsearch');
+const client = new elasticSearch.Client()
+
+client.ping({
+  requestTimeout:30000,
+},function(error){
+  if(error){
+      console.error("DOWN");
+  }else{
+      console.log('CONNECTED')
+      let winston = require('./config/winston');
 let morgan = require('morgan');
+let loggersTry = require('./try')
 express.use(morgan('combined', { stream: winston.stream }));
+loggersTry.tryForLog();
+
+  }
+})
+
 // log.warn("Byeeeeeeeeeeeeeeeeeeeeeeeeeee");
 // console.log("abcabc!" + abc)
 
