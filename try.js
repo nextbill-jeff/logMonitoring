@@ -2,9 +2,14 @@
 
 let loggers = require('./config/winston')
 
-
 function tryForLog(){
-loggers.warn("ssssssssssssssssssssssssssssss")
+    try{
+        let a = ssssss;
+
+    }catch(e){
+        loggers.logger.error(e)
+
+    }
 
 }
 
