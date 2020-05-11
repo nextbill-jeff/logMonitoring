@@ -15,6 +15,6 @@
     "mongodb": "^3.1.12",
     "morgan": "^1.9.1",
     "winston": "^3.1.0",
-    "winston-elasticsearch": "^0.7.7"
+    "winston-elasticsearch": "^0.8.8"
   }
 }
