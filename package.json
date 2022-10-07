@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -12,9 +14,11 @@
     "app-root-path": "^2.1.0",
     "elasticsearch": "^15.3.0",
     "express": "^4.16.4",
-    "mongodb": "^3.1.12",
+    "mongodb": "^3.1.13",
     "morgan": "^1.9.1",
     "winston": "^3.1.0",
-    "winston-elasticsearch": "^0.7.7"
-  }
+    "winston-elasticsearch": "^0.7.8",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
